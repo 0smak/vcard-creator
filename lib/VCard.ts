@@ -314,14 +314,14 @@ ${lastName};${firstName};${additional};${prefix};${suffix}\
   /**
    * Add phone number
    *
-   * @param  {string} number
+   * @param  {string | number} number
    * @param  {string} [type='']
    * 'type' may be PREF | WORK | HOME | VOICE | FAX | MSG |
    * CELL | PAGER | BBS | CAR | MODEM | ISDN | VIDEO
    * or any senseful combination, e.g. 'PREF;WORK;VOICE'
    * @return {this}
    */
-  public addPhoneNumber(number: number, type = ''): this {
+  public addPhoneNumber(number: string | string, type = ''): this {
     this.setProperty(
       'phoneNumber',
       `TEL${type !== '' ? `;${type}` : ''}`,
